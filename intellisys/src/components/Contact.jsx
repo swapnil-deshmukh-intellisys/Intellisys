@@ -3,6 +3,8 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -16,7 +18,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,34 +50,19 @@ const Contact = () => {
             <form id="contacti" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
               </div>
+
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
               </div>
+
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your Message"
-                  rows="5"
-                  required
-                ></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required />
               </div>
+
               <button type="submit" className="submit-btn">
                 Send Message
               </button>
@@ -85,23 +72,26 @@ const Contact = () => {
           <div className="contact-info">
             <h2>Our Office Location</h2>
             <p>
-              <FaMapMarkerAlt /> Gera Imperim Rise, 328-B, Opp. to Wipro
-              Company, Hinjawadi Phase II, Pune, Maharashtra 411057
+              <FaMapMarkerAlt /> Gera Imperim Rise, 328-B, Opp. to Wipro Company,
+              Hinjawadi Phase II, Pune, Maharashtra 411057
             </p>
+
             <p className="phone-number">
               <FaPhoneAlt />
               <a href="tel:+919112817771" className="phone-link">
                 +91 91128 17771
               </a>
             </p>
+
             <p>
               <FaEnvelope />
               <a href="mailto:info@intellisysitsolutions.com">
                 info@intellisysitsolutions.com
               </a>
             </p>
+
             <iframe
-              src="https://maps.google.com/maps?q=intellisys%20it%20solutions%20private%20limited&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              src="https://maps.google.com/maps?q=intellisys%20it%20solutions%20private%20limited&t=&z=13&ie=UTF8&iwloc=&output=embed"
               title="Office Location"
               frameBorder="0"
               scrolling="no"
