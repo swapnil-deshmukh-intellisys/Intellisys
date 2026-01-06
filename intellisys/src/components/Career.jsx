@@ -229,7 +229,7 @@ const Career = () => {
 
     // Submit form
     try {
-      const response = await fetch(`${API_URL}/api/career`, {
+      const response = await fetch(`${API_URL}/career`, {
         method: "POST",
         body: formDataToSend,
       });
