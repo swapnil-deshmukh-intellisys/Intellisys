@@ -1,0 +1,251 @@
+
+.footer {
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    color: white;
+    padding: 50px 0;
+    text-align: left;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+ 
+  .footer-column {
+    flex: 1;
+    padding: 20px;
+    min-width: 280px;
+    text-align: center;
+  }
+  
+  .footer-column p {
+    font-family: 'Poppins', sans-serif;
+  }
+ 
+  .footer-logo img {
+    max-width: 200px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    height: auto;
+  }
+  
+  .footer-column.text-center,
+  .footer-column.text-right {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+    color: orange;
+    margin-bottom: 5px;
+  }
+  
+  .footer-title1 {
+    font-size: 1.4rem;
+    color: orange;
+    margin-bottom: 5px;
+    margin-top: 2rem;
+  }
+ 
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: orange;
+  }
+
+  .footer-column.text-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    gap: 12px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .phone-link {
+    color: white; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .phone-link:hover {
+    color: #FC7F03; 
+    text-decoration: underline;
+  }
+
+  /* PHONE & EMAIL STYLING */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    gap: 10px;
+  }
+  
+  .contact-item svg {
+    font-size: 20px;
+    color: white;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .contact-item:hover {
+    color: orange;
+  }
+  
+  .contact-item:hover svg {
+    color: orange;
+  }
+
+  .footer-email {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s;
+  }
+  
+  .footer-email:hover {
+    color: orange;
+    text-decoration: underline;
+  }
+
+  .footer-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-social a {
+    font-size: 30px;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: orange;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-designer {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  .footer-designer:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 992px) {
+    .footer-container {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      text-align: left;
+      padding-left: 20px;
+    }
+  
+    .footer-column {
+      flex: 1 1 100%;
+      max-width: 100%;
+      text-align: left;
+      padding: 10px 15px;
+    }
+  
+    .footer-column.text-center {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .footer-contact {
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .footer-title {
+      text-align: left;
+    }
+  
+    .footer-social {
+      justify-content: flex-start;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      padding-left: 15px;
+    }
+  
+    .footer-column {
+      text-align: left;
+      width: 100%;
+    }
+  
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .footer-social {
+      justify-content: flex-start;
+    }
+  }

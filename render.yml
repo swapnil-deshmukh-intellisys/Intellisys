@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: shraddhabackend
+    env: node
+    region: singapore
+    rootDir: ShraddhaBackend
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false   # <-- secure, set in Render dashboard
+      - key: FRONTEND_URL
+        sync: false   # <-- set your frontend URL in Render dashboard

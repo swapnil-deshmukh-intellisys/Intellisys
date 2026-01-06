@@ -1,0 +1,168 @@
+
+.technologies-page {
+    padding: 50px;
+  }
+  
+  .section-titletech {
+    font-size: 2rem;
+    color: #FC7F03;
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+  
+  .tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideInDown 1s forwards;
+  }
+  
+  @keyframes slideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .tech-card {
+    background: rgba(111, 114, 116, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: black;
+    border: 1px solid #f3b679;
+    
+  }
+  
+  .tech-card:hover {
+    transform: translateY(-10px);
+    background: #e8850b;
+    color: white;
+  }
+  
+  .tech-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+ 
+  .tech-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #FC7F03;
+  }
+  
+  .tech-card:hover .tech-icon {
+    color: white;
+  }
+  
+  .powerbi-icon,
+  .flutter-icon {
+    width: 50px;
+    height: auto;
+    margin: 0 auto 15px;
+  }
+  
+  .tech-card:hover .flutter-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 1024px) {
+    .tech-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin: 40px 0 25px;
+    }
+    .tech-card{
+        gap: 20px;
+    }
+    .tech-card h3 {
+      font-size: 1.3rem;
+    }
+    
+    .tech-icon {
+      font-size: 35px;
+    }
+    
+    .powerbi-icon,
+    .flutter-icon {
+      width: 45px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tech-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      padding: 50px;
+    }
+    
+    .section-title {
+      font-size: 1.6rem;
+      margin: 30px 0 20px;
+    }
+    
+    .tech-card {
+      padding: 15px;
+    }
+    
+    .tech-card h3 {
+      font-size: 1.1rem;
+    }
+    
+    .tech-icon {
+      font-size: 30px;
+    }
+    
+    .flutter-icon {
+      width: 40px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tech-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    
+    .section-title {
+      font-size: 1.4rem;
+      margin: 50px 0 15px;
+    }
+    
+    .tech-card {
+      padding: 12px;
+    }
+    
+    .tech-card h3 {
+      font-size: 1rem;
+    }
+    
+    .tech-icon {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    
+    .powerbi-icon,
+    .flutter-icon {
+      width: 35px;
+      margin-bottom: 10px;
+      height: auto;
+    }
+  }
