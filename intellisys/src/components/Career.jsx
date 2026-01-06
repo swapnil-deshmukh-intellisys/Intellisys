@@ -227,7 +227,7 @@ const Career = () => {
 
     // Submit form
     try {
-      const response = await fetch("http://localhost:5000/api/career", {
+      const response = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/career`, {
         method: "POST",
         body: formDataToSend,
       });
