@@ -224,6 +224,8 @@ const Career = () => {
     Object.entries(formData).forEach(([key, value]) => {
       formDataToSend.append(key, value);
     });
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
+
 
     // Submit form
     try {

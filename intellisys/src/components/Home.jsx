@@ -57,6 +57,8 @@ const Home = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const nameRegex = /^[a-zA-Z\s]{3,50}$/;
     const phoneRegex = /^\d{10}$/;
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
+
   
     if (!name || !email || !category || !contact || !description) {
       setResponseMessage("⚠ All fields are required.");

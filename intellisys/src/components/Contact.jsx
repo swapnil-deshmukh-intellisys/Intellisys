@@ -9,6 +9,8 @@ const Contact = () => {
     const name = e.target.name.value.trim();
     const email = e.target.email.value.trim();
     const message = e.target.message.value.trim();
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
+
 
     if (!name || !email || !message) {
       alert("All fields are required!");
