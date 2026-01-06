@@ -76,7 +76,7 @@ const Home = () => {
     }
   
     try {
-      const response = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/project`, {
+      const response = await fetch(`${API_URL}/api/project`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
