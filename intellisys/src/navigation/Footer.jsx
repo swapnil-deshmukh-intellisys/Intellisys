@@ -80,20 +80,20 @@ const Footer = () => {
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFacebook} />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/intellisys_it_solutions"
               target="_blank"
