@@ -15,9 +15,10 @@ connectDB(); // MongoDB Connection
 
 // ✅ CORS Configuration (WORKING for Vercel + Render)
 const allowedOrigins = [
-  process.env.FRONTEND_URL,             // from Render env (recommended)
+  process.env.FRONTEND_URL,
+  "https://www.intellisysitsolutions.com",             // from Render env (recommended)
   "https://intellisys-l6wc.vercel.app",  // your production frontend
-  "http://localhost:3000",              // local frontend
+  "http://localhost:4000",              // local frontend
 ].filter(Boolean); // removes undefined if FRONTEND_URL is not set
 
 const corsOptions = {
