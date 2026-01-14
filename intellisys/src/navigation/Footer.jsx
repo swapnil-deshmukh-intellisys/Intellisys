@@ -56,7 +56,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faPhone} />
               <strong>Phone:</strong>
               <a href="tel:+919112817771" className="phone-link">
-                +91 91128 17771
+                +91 91128 17771 / 84211 74213
               </a>
             </div>
             <div className="contact-item">

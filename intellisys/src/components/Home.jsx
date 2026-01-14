@@ -111,6 +111,7 @@ const Home = () => {
     interns: 0,
     experience: 0,
     collab: 0,
+    Freelancers:0,
   });
 
   useEffect(() => {
@@ -121,6 +122,7 @@ const Home = () => {
       interns: 35,
       experience: 2,
       collab: 7,
+      Freelancers:55,
     };
 
     const duration = 2000;
@@ -452,6 +454,14 @@ const Home = () => {
               </h3>
               <p className="stat-label">Collab Companies</p>
             </div>
+
+            <div className="stat-item" data-aos="fade-up">
+              <h3 className="stat-number">
+                {counts.Freelancers}
+                <span>+</span>
+              </h3>
+              <p className="stat-label">Freelancers</p>
+            </div>
           </div>
         </div>
       </section>
@@ -485,7 +495,7 @@ const Home = () => {
                 and support were top-notch throughout the process.
               </p>
               <div className="testimonial-author">
-                <div>
+                <div>   
                   <div className="testimonial-name">Rohit Shelke</div>
                   <div className="testimonial-role">Software Engineer</div>
                 </div>
