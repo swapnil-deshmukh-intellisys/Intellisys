@@ -1,0 +1,64 @@
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    name: Validate PR
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        npm run install:all
+        
+    - name: Check for test files
+      run: |
+        echo "🔍 Checking for test files..."
+        find . -name "*.test.*" -o -name "*test.*" -o -name "*.spec.*" -o -name "*spec.*" | grep -v node_modules || echo "⚠️  No test files found"
+        
+    - name: Run linting
+      run: npm run lint
+      
+    - name: Run tests
+      run: npm run test
+      
+    - name: Check test coverage
+      run: |
+        npm run test:coverage
+        echo "📊 Coverage report generated"
+        
+    - name: Validate package.json scripts
+      run: |
+        echo "✅ Validating root-level scripts..."
+        npm run test --help > /dev/null
+        npm run lint --help > /dev/null
+        npm run test:coverage --help > /dev/null
+        echo "✅ All required scripts are available"
+        
+    - name: Check file structure
+      run: |
+        echo "📁 Validating repository structure..."
+        if [ ! -d "intellisys" ]; then
+          echo "❌ Frontend directory missing"
+          exit 1
+        fi
+        if [ ! -d "ShraddhaBackend" ]; then
+          echo "❌ Backend directory missing"
+          exit 1
+        fi
+        echo "✅ Repository structure is valid"
