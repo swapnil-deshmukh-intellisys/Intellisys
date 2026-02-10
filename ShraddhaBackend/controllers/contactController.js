@@ -13,7 +13,8 @@ exports.submitMessage = async (req, res) => {
 
     res.status(201).json({ message: "✅ Message sent successfully!" });
   } catch (error) {
-    console.error("Error submitting message:", error.message);
-    res.status(500).json({ message: "❌ Failed to send message." });
+    // eslint-disable-next-line no-console
+    console.error("Error in contact controller:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };

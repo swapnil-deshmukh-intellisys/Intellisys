@@ -62,7 +62,8 @@ app.use("/api/contact", contactRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Error handling middleware
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
+  // eslint-disable-next-line no-console
   console.error("Error:", err.stack);
   res.status(500).json({
     message: "Something went wrong!",
@@ -79,6 +80,7 @@ app.use("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(
     `🚀 Server running on port ${PORT} in ${process.env.NODE_ENV || "development"} mode`
   );

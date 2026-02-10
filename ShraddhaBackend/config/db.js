@@ -1,19 +1,22 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGO_URI || process.env.MONGODB_URI;
+    // eslint-disable-next-line no-console
+    console.log("Connecting to MongoDB...");
     
-    if (!mongoURI) {
-      throw new Error("MongoDB URI not found in environment variables");
-    }
-
-    await mongoose.connect(mongoURI);
-    console.log("✅ MongoDB Connected Successfully");
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/intellisys', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    
+    // eslint-disable-next-line no-console
+    console.log("MongoDB connected successfully");
   } catch (error) {
-    console.error("❌ MongoDB Connection Error:", error.message);
+    // eslint-disable-next-line no-console
+    console.error("MongoDB connection error:", error);
     process.exit(1);
   }
 };
 
-module.exports = connectDB;
+module.exports = { connectDB };

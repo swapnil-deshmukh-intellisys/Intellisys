@@ -1,0 +1,40 @@
+{
+  "name": "intellisys-monorepo",
+  "version": "1.0.0",
+  "description": "Root-level orchestration for Intellisys frontend and backend testing",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd intellisys && npm test -- --watchAll=false --coverage",
+    "test:backend": "cd ShraddhaBackend && npm run test:coverage",
+    "test:coverage": "npm run test:frontend && npm run test:backend && npm run merge:coverage && node coverage-reporter.js",
+    "merge:coverage": "node scripts/merge-coverage.js",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd intellisys && npm run lint || npx eslint intellisys/src --ext .js,.jsx,.ts,.tsx",
+    "lint:backend": "cd ShraddhaBackend && npm run lint || npx eslint ShraddhaBackend --ext .js",
+    "install:all": "npm install && cd intellisys && npm install && cd ../ShraddhaBackend && npm install",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd intellisys && npm run build",
+    "build:backend": "cd ShraddhaBackend && echo 'Backend build completed'",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd intellisys && npm start",
+    "dev:backend": "cd ShraddhaBackend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "istanbul-merge": "^2.0.0"
+  },
+  "workspaces": [
+    "intellisys",
+    "ShraddhaBackend"
+  ],
+  "engines": {
+    "node": "22.x",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "react-scripts": "0.0.0"
+  }
+}
