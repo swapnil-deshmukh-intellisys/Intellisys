@@ -20,10 +20,8 @@ exports.submitProposal = async (req, res) => {
       proposalId: proposal._id 
     });
   } catch (error) {
-    console.error("Error saving proposal:", error.message);
-    res.status(500).json({ 
-      message: "❌ Failed to submit proposal.",
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
-    });
+    // eslint-disable-next-line no-console
+    console.error("Error in project controller:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };

@@ -58,7 +58,7 @@ describe('Backend Routes', () => {
   });
 
   test('P2P: routes handle invalid requests gracefully', async () => {
-    const response = await request(app)
+    await request(app)
       .get('/api/nonexistent')
       .expect(404);
   });

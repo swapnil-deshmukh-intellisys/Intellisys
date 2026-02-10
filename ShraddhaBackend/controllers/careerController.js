@@ -32,10 +32,8 @@ exports.submitApplication = async (req, res) => {
       applicationId: application._id 
     });
   } catch (error) {
-    console.error("Error saving application:", error.message);
-    res.status(500).json({ 
-      message: "❌ Failed to submit application.",
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
-    });
+    // eslint-disable-next-line no-console
+    console.error("Error in career controller:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };
